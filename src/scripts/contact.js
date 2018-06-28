@@ -58,9 +58,6 @@ const createContact = (fName, lName, pNumber, Addr, IDcounter) => {
     contactList.push(person)
 }
 
-createContact("Kareem", "Abdul-Jabbar", "123-005-7446", "001 Points Leader Way", "")
-createContact("Karl", "Malone", "123-005-4852", "2 Mail Man Lane", "")
-
 console.log(contactList);
 
 module.exports=createContact
