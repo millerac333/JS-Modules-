@@ -1,19 +1,4 @@
-//--- creates a generator function to assign new ID numbers to contacts and created contacts.//
-// const idGenerator = function* (startFrom = 0) {
-//     let newID = 1
-//     while (true) {
-//         yield startFrom + newID
-//         newID++
-
-//     }
-// }
-
-// function idGenerator(initialID) {
-//     this.nextId = initialID || 1;
-// }
-
 global.counter = 0
-//--- calls and assigns new variable name to ID generator function
 
 
 //--- uses Object.create to write new contact prototype with defined keys underneath//

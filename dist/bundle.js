@@ -19,22 +19,7 @@ const DomBuilder = (what, where) => {
   module.exports = DomBuilder
 },{}],3:[function(require,module,exports){
 (function (global){
-//--- creates a generator function to assign new ID numbers to contacts and created contacts.//
-// const idGenerator = function* (startFrom = 0) {
-//     let newID = 1
-//     while (true) {
-//         yield startFrom + newID
-//         newID++
-
-//     }
-// }
-
-// function idGenerator(initialID) {
-//     this.nextId = initialID || 1;
-// }
-
 global.counter = 0
-//--- calls and assigns new variable name to ID generator function
 
 
 //--- uses Object.create to write new contact prototype with defined keys underneath//
@@ -106,15 +91,39 @@ console.log(localStorageFunctions);
 
 module.exports = localStorageFunctions
 },{}],5:[function(require,module,exports){
+const getContacts = require("./contactCollection");
 
-},{}],6:[function(require,module,exports){
+collectContacts.saveDatabase();
+
+const appendSection = document.querySelector("#output-form");
+const fragment = document.createDocumentFragment();
+
+const formInputCreator = (inputID, inputType, inputName) => {
+    let newInputField = document.createElement("input");
+    newInputField.setAttribute("class", "input-field")
+    newInputField.id = inputID;
+    newInputField.type = inputType;
+    newInputField.name = inputName
+        newInputField.placeholder = inputName;
+    fragment.appendChild(newInputField);
+    appendSection.appendChild(fragment);
+}
+
+const inputFirstName = newInputField("inputFirstName", "text", "First Name");
+const inputLastName = newInputField("inputLastName", "text", "Last Name");
+const inputPhoneNumber = newInputField("inputPhoneNumber", "text", "Phone Number");
+const inputAddress = newInputField("inputAddress", "text", "Address");
+const submitButton = newInputField("submitButton", "submit", "Submit");
+
+
+},{"./contactCollection":4}],6:[function(require,module,exports){
 const contact = require("./contact.js")
 const localStorage = require("./contactCollection.js")
 
 let contactList = localStorage.loadDatabase(contactList)
 console.log(contactList);
 
-let contactListArticle = document.getElementById("output");
+let contactListArticle = document.getElementById("#output-list");
 
 const contactFragment = document.createDocumentFragment()
 
@@ -131,5 +140,5 @@ let addContactToDOM = () => {
 }
 module.exports = addContactToDOM
 },{"./contact.js":3,"./contactCollection.js":4}],7:[function(require,module,exports){
-arguments[4][5][0].apply(exports,arguments)
-},{"dup":5}]},{},[3,4,5,6,1,2,7]);
+
+},{}]},{},[3,4,5,6,1,2,7]);

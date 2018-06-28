@@ -4,7 +4,7 @@ const localStorage = require("./contactCollection.js")
 let contactList = localStorage.loadDatabase(contactList)
 console.log(contactList);
 
-let contactListArticle = document.getElementById("output");
+let contactListArticle = document.getElementById("#output-list");
 
 const contactFragment = document.createDocumentFragment()
 
